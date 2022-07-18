@@ -1,15 +1,18 @@
 package io.datajek.spring.basics.movierecommendersystem.movierecommendersystem;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class RecommenderImplementation {
-	@Autowired
+	
+	
 	private Filter filter;
 	
-	public RecommenderImplementation(Filter filter) {
-		super();
+	@Autowired
+	public RecommenderImplementation(@Qualifier("collaborativeFilter")Filter filter) {
+		
 		this.filter = filter;
 	}
 	
