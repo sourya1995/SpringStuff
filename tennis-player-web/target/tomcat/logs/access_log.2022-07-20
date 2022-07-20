@@ -1,0 +1,10 @@
+0:0:0:0:0:0:0:1 - - [20/Jul/2022:10:59:53 +0530] "GET /player.do?name=sampras HTTP/1.1" 200 241 http-bio-8080-exec-1 550
+0:0:0:0:0:0:0:1 - - [20/Jul/2022:11:00:43 +0530] "GET /player.do?name=sampras HTTP/1.1" 200 241 http-bio-8080-exec-1 52
+0:0:0:0:0:0:0:1 - - [20/Jul/2022:11:00:55 +0530] "GET /player.do?name=sampras HTTP/1.1" 200 241 http-bio-8080-exec-3 3
+0:0:0:0:0:0:0:1 - - [20/Jul/2022:11:32:51 +0530] "GET /player.do HTTP/1.1" 404 949 http-bio-8080-exec-5 7
+0:0:0:0:0:0:0:1 - - [20/Jul/2022:11:34:02 +0530] "GET /player.do HTTP/1.1" 200 424 http-bio-8080-exec-1 652
+0:0:0:0:0:0:0:1 - - [20/Jul/2022:11:34:09 +0530] "POST /player.do HTTP/1.1" 200 322 http-bio-8080-exec-3 74
+0:0:0:0:0:0:0:1 - - [20/Jul/2022:11:34:13 +0530] "GET /player.do HTTP/1.1" 200 424 http-bio-8080-exec-4 2
+0:0:0:0:0:0:0:1 - - [20/Jul/2022:11:50:40 +0530] "GET /player.do HTTP/1.1" 200 424 http-bio-8080-exec-1 60
+0:0:0:0:0:0:0:1 - - [20/Jul/2022:11:50:47 +0530] "POST /player.do HTTP/1.1" 500 1577 http-bio-8080-exec-3 9
+0:0:0:0:0:0:0:1 - - [20/Jul/2022:11:51:01 +0530] "POST /player.do HTTP/1.1" 200 416 http-bio-8080-exec-2 570
