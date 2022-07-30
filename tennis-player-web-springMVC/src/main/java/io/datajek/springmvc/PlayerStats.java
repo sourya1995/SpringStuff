@@ -1,8 +1,12 @@
 package io.datajek.springmvc;
 
+import io.datajek.springmvc.validation.HeadToHead;
+
 public class PlayerStats {
 	private String player1;
 	private String player2;
+	
+	@HeadToHead(message="Invalid format")
 	private String head2head;
 	public PlayerStats() {
 		super();
