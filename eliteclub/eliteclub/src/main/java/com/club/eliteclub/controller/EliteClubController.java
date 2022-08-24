@@ -7,7 +7,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.club.eliteclub.model.Club;
+import com.club.eliteclub.model.ClubDTO;
 import com.club.eliteclub.service.EliteClubService;
 
 @RestController
@@ -17,7 +17,7 @@ public class EliteClubController {
 	private EliteClubService eliteClubService;
 	
 	@GetMapping(path="/clubs", produces = MediaType.APPLICATION_JSON_VALUE)
-	public List<Club> clubs() {
+	public List<ClubDTO> clubs() {
 		return eliteClubService.getAll();
 	}
 	
