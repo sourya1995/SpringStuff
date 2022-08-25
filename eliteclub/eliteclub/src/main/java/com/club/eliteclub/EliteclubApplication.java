@@ -10,6 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Import;
 
 import com.club.eliteclub.service.EliteClubService;
+import com.club.eliteclub.service.EliteClubServiceImpl;
 import com.club.eliteclub.model.ClubDTO;
 
 import antlr.collections.List;
@@ -21,7 +22,7 @@ public class EliteclubApplication implements ApplicationRunner {
 	private static final Logger LOG = LoggerFactory.getLogger(EliteclubApplication.class);
 	
 	@Autowired
-	private EliteClubService eliteClubService;
+	private EliteClubServiceImpl eliteClubServiceImpl;
 
 	public static void main(String[] args) {
 		SpringApplication.run(EliteclubApplication.class, args);
@@ -30,8 +31,8 @@ public class EliteclubApplication implements ApplicationRunner {
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		// TODO Auto-generated method stub
-		eliteClubService.addClub("Billionaire", "Environmentalist", "Poker");
-		List<ClubDTO> clubs = eliteClubService.searchClub("Bi");
+		eliteClubServiceImpl.addClub("Billionaire", "Environmentalist", "Poker");
+		List<ClubDTO> clubs = eliteClubServiceImpl.searchClub("Bi");
 		LOG.info("Search Result: {}", clubs);
 		
 		

@@ -1,5 +1,9 @@
 package com.club.billionaireClub.dao;
 
-public class BillionairesRepository extends CrudRepository<Billionaires, Long>{
+import org.springframework.data.repository.CrudRepository;
+
+import com.club.billionaireClub.domain.Billionaires;
+
+public interface BillionairesRepository extends CrudRepository<Billionaires, Long>{
 
 }
