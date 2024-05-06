@@ -1,5 +1,5 @@
 package com.sourya.batchapp.parameter;
 
-public class Parameter {
-
+public interface Parameter<T> {
+    String getParamName();
 }

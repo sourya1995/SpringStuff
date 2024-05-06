@@ -1,5 +1,6 @@
 package com.sourya.batchapp.job.component.process;
 
-public class Processor {
+public interface Processor<T>{
+	T process(T input);
 
 }

@@ -1,15 +1,17 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.4.0</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-  <groupId>com.sourya</groupId>
-  <artifactId>batchapp</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <name>batch-app</name>
+	<groupId>com.sourya</groupId>
+	<artifactId>batchapp</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>batch-app</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>1.8</java.version>
@@ -18,7 +20,7 @@
 	</properties>
 	<dependencies>
 
-		<!-- Exclude spring boot logging libraries as they clash with Spark Slf4j	-->
+		<!-- Exclude spring boot logging libraries as they clash with Spark Slf4j -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
@@ -58,13 +60,13 @@
 			<artifactId>janino</artifactId>
 			<version>3.0.8</version>
 		</dependency>
-		<!-- ORM	-->
+		<!-- ORM -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 
-		<!-- Databases Dependencies		-->
+		<!-- Databases Dependencies -->
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
@@ -75,7 +77,7 @@
 			<artifactId>spring-boot-starter-jdbc</artifactId>
 		</dependency>
 
-		<!-- Testing	-->
+		<!-- Testing -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -102,7 +104,7 @@
 					<executable>java</executable>
 					<arguments>
 						<argument>-classpath</argument>
-						<classpath/>
+						<classpath />
 						<argument>com.jmb.batchapp.SparkBatchApp</argument>
 					</arguments>
 				</configuration>
