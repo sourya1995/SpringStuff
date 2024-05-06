@@ -1,5 +1,8 @@
 package org.sourya.springlearning;
 
+import org.springframework.stereotype.Component;
+
+@Component /*which class to add to context*/
 public class Parrot {
 	private String name;
 

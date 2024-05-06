@@ -12,7 +12,8 @@ public class Main
     {
 		/* Parrot p = new Parrot(); */
         var context = new AnnotationConfigApplicationContext(ProjectConfig.class);
-        Parrot p = context.getBean("parrot2", Parrot.class);
+        Parrot p = context.getBean(Parrot.class);
+        p.setName("Ravi");
         System.out.println(p.getName());
         
         String s = context.getBean(String.class);
