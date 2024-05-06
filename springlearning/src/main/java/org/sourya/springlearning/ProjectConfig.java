@@ -5,7 +5,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ComponentScan(basePackages = "org.sourya.springlearning") /* where to look for classes */
+/* @ComponentScan(basePackages = "org.sourya.springlearning") */ /* where to look for classes */
 public class ProjectConfig {
 	/*
 	 * @Bean we will add this instance to the context Parrot parrot() { var p = new
