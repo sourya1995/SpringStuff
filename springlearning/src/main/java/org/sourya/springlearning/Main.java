@@ -8,24 +8,25 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  * Hello world!
  *
  */
-public class Main 
-{
-    public static void main( String[] args )
-    {
+public class Main {
+	public static void main(String[] args) {
 		/* Parrot p = new Parrot(); */
-        var context = new AnnotationConfigApplicationContext(ProjectConfig.class);
-        Parrot x = new Parrot();
-        x.setName("CR7");
-        Supplier<Parrot> parrotSupplier = () -> x;
-        context.registerBean("parrot1", Parrot.class, parrotSupplier);
-        Parrot p = context.getBean(Parrot.class);
-		/* p.setName("Ravi"); */
-        System.out.println(p.getName());
-        
-        String s = context.getBean(String.class);
-        System.out.println(s);
-        
-        Integer n = context.getBean(Integer.class);
-        System.out.println(n);
-    }
+		var context = new AnnotationConfigApplicationContext(ProjectConfig.class);
+		/*
+		 * Parrot x = new Parrot(); x.setName("CR7"); Supplier<Parrot> parrotSupplier =
+		 * () -> x; context.registerBean("parrot1", Parrot.class, parrotSupplier);
+		 * Parrot p = context.getBean(Parrot.class); p.setName("Ravi");
+		 * System.out.println(p.getName());
+		 * 
+		 * String s = context.getBean(String.class); System.out.println(s);
+		 * 
+		 * Integer n = context.getBean(Integer.class); System.out.println(n);
+		 */
+		
+		Person person = context.getBean(Person.class);
+		Parrot parrot = context.getBean(Parrot.class);
+		System.out.println(person.getName());
+		System.out.println(parrot.getName());
+		System.out.println(person.getParrot());
+	}
 }

@@ -19,4 +19,19 @@ public class ProjectConfig {
 	 * 
 	 * @Bean Parrot parrot3() { var p = new Parrot(); p.setName("Riki"); return p; }
 	 */
+	
+	@Bean
+	public Parrot parrot() {
+		Parrot p = new Parrot();
+		p.setName("Ramesh");
+		return p;
+	}
+	
+	@Bean
+	public Person person() {
+		Person p = new Person();
+		p.setName("Sachin");
+		p.setParrot(parrot()); /* if the bean exists, return a reference to it - if not, create and return a reference */
+		return p;
+	}
 }
