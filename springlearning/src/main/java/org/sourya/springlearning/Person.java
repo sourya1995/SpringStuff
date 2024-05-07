@@ -8,12 +8,17 @@ public class Person {
 	private String name = "Ella";
 	
 	 //we can inject an appropriate value from context here
-	private final Parrot parrot;
+	private Parrot parrot;
 	
-	@Autowired //hey, inject an appropriate value from your context
-	public Person(Parrot parrot) {
-		this.parrot = parrot;
+	
+	public Person() {
+		
 	}
+
+	/*
+	 * @Autowired //hey, inject an appropriate value from your context public
+	 * Person(Parrot parrot) { this.parrot = parrot; }
+	 */
 	public String getName() {
 		return name;
 	}
@@ -25,7 +30,7 @@ public class Person {
 	}
 	//can have autowired here too - have to remove final 
 	public void setParrot(Parrot parrot) {
-		parrot = parrot;
+		this.parrot = parrot;
 	}
 	
 	
