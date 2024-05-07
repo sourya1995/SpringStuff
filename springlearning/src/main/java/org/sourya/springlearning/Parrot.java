@@ -4,9 +4,9 @@ import javax.annotation.PostConstruct;
 
 import org.springframework.stereotype.Component;
 
-/*@Component which class to add to context*/
+@Component /* which class to add to context */
 public class Parrot {
-	private String name;
+	private String name = "Koko";
 
 	public Parrot() {
 		System.out.println("Parrot created");

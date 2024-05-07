@@ -24,9 +24,9 @@ public class Main {
 		 */
 		
 		Person person = context.getBean(Person.class);
-		Parrot parrot = context.getBean(Parrot.class);
+		/* Parrot parrot = context.getBean(Parrot.class); */
 		System.out.println(person.getName());
-		System.out.println(parrot.getName());
+		/* System.out.println(parrot.getName()); */
 		System.out.println(person.getParrot());
 	}
 }
