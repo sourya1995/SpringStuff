@@ -7,8 +7,13 @@ import org.springframework.stereotype.Component;
 public class Person {
 	private String name = "Ella";
 	
+	 //we can inject an appropriate value from context here
+	private final Parrot parrot;
+	
 	@Autowired //hey, inject an appropriate value from your context
-	private Parrot parrot;
+	public Person(Parrot parrot) {
+		this.parrot = parrot;
+	}
 	public String getName() {
 		return name;
 	}
@@ -18,8 +23,9 @@ public class Person {
 	public Parrot getParrot() {
 		return parrot;
 	}
+	//can have autowired here too - have to remove final 
 	public void setParrot(Parrot parrot) {
-		this.parrot = parrot;
+		parrot = parrot;
 	}
 	
 	
