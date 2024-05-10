@@ -9,7 +9,7 @@ import org.aspectj.lang.annotation.Aspect;
 @Aspect //no bean for this class
 public class LoggingAspect {
 	private Logger logger = Logger.getLogger(LoggingAspect.class.getName());
-	@Around("execution(* org.sourya.springaspect.*.*(..))")
+	@Around("@annotation(ToLog)")
 	public Object log(ProceedingJoinPoint joinPoint) throws Throwable 
 	{
 		String methodName = joinPoint.getSignature().getName(); //method name
