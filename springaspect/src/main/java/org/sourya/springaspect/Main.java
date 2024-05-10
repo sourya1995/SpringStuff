@@ -1,5 +1,7 @@
 package org.sourya.springaspect;
 
+import java.util.logging.Logger;
+
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
@@ -8,6 +10,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  */
 public class Main 
 {
+	private static Logger logger = Logger.getLogger(Main.class.getName());
     public static void main( String[] args )
     {
         var c = new AnnotationConfigApplicationContext(ProjectConfig.class);
@@ -16,6 +19,7 @@ public class Main
         Comment comment = new Comment();
         comment.setText("Demo comment");
         comment.setAuthor("Sourya");
-        service.publishComment(comment);
+        String value = service.publishComment(comment);
+        logger.info(value);
     }
 }

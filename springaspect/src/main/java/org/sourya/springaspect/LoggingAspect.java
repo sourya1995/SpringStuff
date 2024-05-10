@@ -10,10 +10,17 @@ import org.aspectj.lang.annotation.Aspect;
 public class LoggingAspect {
 	private Logger logger = Logger.getLogger(LoggingAspect.class.getName());
 	@Around("execution(* org.sourya.springaspect.*.*(..))")
-	public void log(ProceedingJoinPoint joinPoint) 
+	public Object log(ProceedingJoinPoint joinPoint) throws Throwable 
 	{
+		String methodName = joinPoint.getSignature().getName(); //method name
+		Object[] arguments = joinPoint.getArgs(); //arguments
 		logger.info("Method will execute");
-		joinPoint.proceed(); //delegate to intercepted method
+		Comment comment = new Comment();
+		comment.setText("something else");
+		Object[] newArguments = {comment};
+		Object returnedByMethod = joinPoint.proceed(newArguments); //delegate to intercepted method
 		logger.info("Method executed");
+		
+		return "FAILED";
 	}
 }
