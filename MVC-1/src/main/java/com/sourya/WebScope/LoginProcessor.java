@@ -9,6 +9,12 @@ public class LoginProcessor {
 	private String username;
 	private String password;
 	
+	private final LoggedUserManagementService loggedUserManagementService;
+	
+	public LoginProcessor(LoggedUserManagementService loggedUserManagementService) {
+		this.loggedUserManagementService = loggedUserManagementService;
+	}
+
 	public boolean login() {
 		String username = this.getUsername();
 		String password = this.getPassword();
