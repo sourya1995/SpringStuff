@@ -14,20 +14,14 @@ public class PaymentController {
 	}
 	
 	@PostMapping("/payment")
-	public ResponseEntity<?> makePayment() {
-		try {
+	public ResponseEntity<PaymentDetails> makePayment() {
+		
 			PaymentDetails paymentDetails = paymentService.processPayment();
 			
 			return ResponseEntity
 					.status(HttpStatus.ACCEPTED)
 					.body(paymentDetails);
-		} catch(NotEnoughMoneyException e) {
-			ErrorDetails errorDetails = new ErrorDetails();
-			errorDetails.setMessage("not enough balance");
-			return ResponseEntity
-					.badRequest()
-					.body(errorDetails);
-		}
+		} 
 	}
 	
 	
