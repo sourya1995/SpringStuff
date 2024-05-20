@@ -16,8 +16,8 @@ public class TransferService {
 	
 	@Transactional
 	public void transferMoney(long idSender, long idReceiver, BigDecimal amount) {
-		Account sender = accountRepository.findAccountById(idSender);
-		Account receiver = accountRepository.findAccountById(idReceiver);
+		Account sender = accountRepository.findById(idSender).orElseThrow(() -> new AccountNotFoundException());
+		Account receiver = accountRepository.findById(idReceiver).orElseThrow(() -> new AccountNotFoundException());
 		
 		BigDecimal senderNewAmount = sender.getAmount().subtract(amount);
 		BigDecimal receiverNewAmount = receiver.getAmount().add(amount);
@@ -26,8 +26,12 @@ public class TransferService {
 		accountRepository.changeAmount(idReceiver, receiverNewAmount);
 	}
 	
-	public List<Account> getAllAccounts(){
-		return accountRepository.findAllAccounts();
+	public Iterable<Account> getAllAccounts(){
+		return accountRepository.findAll();
+	}
+	
+	public List<Account> findAccountsByName(String name){
+		return accountRepository.findAccountsByName(name);
 	}
 	
 	
